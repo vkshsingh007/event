@@ -20,7 +20,7 @@ const Header = () => {
       <nav>
         <ul className="flex gap-x-6 text-sm">
           {routes.map(({ name, path }) => (
-            <li key={name} className="text-white/50">
+            <li key={name} className="text-white/50 hover:text-white transition">
               <Link href={path}>{name}</Link>
             </li>
           ))}
