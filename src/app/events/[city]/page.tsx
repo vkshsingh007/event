@@ -1,4 +1,6 @@
+import EventList from "@/components/events-list";
 import H1 from "@/components/h1";
+import { EventoEvent } from "@/lib/types";
 import React from "react";
 type EventPageProps = {
   params: {
@@ -11,7 +13,7 @@ const EventPage = async ({ params }: EventPageProps) => {
   const response = await fetch(
     "https://bytegrad.com/course-assets/projects/evento/api/events?city=" + city
   );
-  const events = await response.json();
+  const events: EventoEvent[] = await response.json();
   return (
     <main className="flex flex-col items-center py-20 px-[20px] min-h-[110vh]">
       <H1>
@@ -19,11 +21,8 @@ const EventPage = async ({ params }: EventPageProps) => {
         {city !== "all" &&
           `Event in ${city.charAt(0).toUpperCase() + city.slice(1)}`}
       </H1>
-      {events.map((event) => (
-        <section key={event.id} className="">
-          {event.name}
-        </section>
-      ))}
+
+      <EventList events={events} />
     </main>
   );
 };
