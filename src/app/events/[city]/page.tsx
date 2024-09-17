@@ -16,11 +16,13 @@ const EventPage = async ({ params }: EventPageProps) => {
   const events: EventoEvent[] = await response.json();
   return (
     <main className="flex flex-col items-center py-20 px-[20px] min-h-[110vh]">
-      <H1>
-        {city === "all" && "All Events"}
-        {city !== "all" &&
-          `Event in ${city.charAt(0).toUpperCase() + city.slice(1)}`}
-      </H1>
+      <div className="mb-28">
+        <H1>
+          {city === "all" && "All Events"}
+          {city !== "all" &&
+            `Event in ${city.charAt(0).toUpperCase() + city.slice(1)}`}
+        </H1>
+      </div>
 
       <EventList events={events} />
     </main>
