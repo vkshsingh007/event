@@ -1,4 +1,4 @@
-import { capitalize, getEvent } from "@/lib/utils";
+import { getEvent } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
