@@ -8,6 +8,18 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  // top 100 most popular events
+  return [
+    {
+      slug: "comedy-extravaganza",
+    },
+    {
+      slug: "dj-practices-session",
+    },
+  ];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
